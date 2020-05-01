@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Busca por CEP</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container caixa">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="foto-perfil" src="img/logo.jpg" alt="Foto de perfil do Jackson Felipe Magnabosco">
+                </div>
+
+                <div class="col-lg-6">
+                    <h1 class="titulo-nome">Busca por CEP</h1>
+                </div>
+            </div>
+    </header>
+    <main>
+        <section class="projeto">
+            <div class="container">
+                <div class="divMain">
+                    <label class="tempo">Digite o CEP:</label>
+                    <input id="cep" type="number" class="campo" tabindex="1" />
+                    <button id="buscar">Buscar</button>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="resultado">
+                    <h2>Resultado</h2>
+                    <form>
+                        <div class="resultadoum">
+                            <label for="rua">Rua</label>
+                        </div>
+                        <div class="divMain">
+                            <input id="rua" name="rua" placeholder="" class="campo" tabindex="1" disabled>
+                        </div>
+                        <div class="resultadoum">
+                            <label for="bairro">Bairro</label>
+                        </div>
+                        <div class="divMain">
+                            <input id="bairro" name="bairro" placeholder="" class="campo" tabindex="1" disabled>
+                        </div>
+                        <div class="resultadoum">
+                            <label for="uf">UF</label>
+                        </div>
+                        <div class="divMain">
+                            <input id="uf" name="uf" placeholder="" class="campo" tabindex="1" disabled>
+                        </div>
+                        <div class="resultadoum">
+                            <label for="cidade">Cidade</label>
+                        </div>
+                        <div class="divMain">
+                            <input id="cidade" name="cidade" placeholder="" class="campo" tabindex="1"
+                                disabled>
+                        </div>
+                        <div class="resultadoum">
+                            <label for="ibge">IBGE</label>
+                        </div>
+                        <div class="divMain">
+                            <input id="ibge" name="ibge" placeholder="" class="campo" tabindex="1"
+                                disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/jquery.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

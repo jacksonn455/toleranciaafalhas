@@ -1,0 +1,220 @@
+header {
+    background: white;
+    padding: 20px 0;
+}
+
+.resultado{
+    margin-top: 50px;
+}
+
+.caixa {
+    position: relative;
+    width: 940px;
+    /* largura padrao da web */
+    margin: 0 auto;
+}
+
+.titulo-nome {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-top: 200px;
+    color: #04B4AE;
+}
+
+.projeto {
+    margin-left: 0;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    font-size: 18px;
+    color: white;
+    text-align: justify;
+    background: linear-gradient(#04B4AE 30%, #01DFD7);
+}
+
+.grupo {
+    width: 32%;
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.grupo-dois {
+    width: 45%;
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.chegada {
+    margin-top: 20px;
+}
+
+.cliente {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin: 0;
+    padding-bottom: 1em;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: .7em;
+    width: 100%;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: .5em 2em;
+    border: 0;
+    border-bottom: 3px solid;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: -3px;
+    color: #fff;
+    background-color: #047a76;
+    border-color: #045956;
+    width: 20%;
+    display: block;
+    clear: both;
+    margin: 10px 0px;
+}
+
+button:active {
+    margin-top: 0px;
+    border: 0;
+}
+
+button[disabled=disabled],
+button:disabled {
+    background-color: gray;
+    border-color: darkgray;
+}
+
+.adicionar-paciente {
+    margin-top: 30px;
+}
+
+.campo-invalido {
+    border: 1px solid red;
+}
+
+#mensagens-erro {
+    color: red;
+}
+
+.paciente-invalido {
+    background-color: lightcoral;
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#filtrar-tabela {
+    width: 200px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.invisivel {
+    display: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #9370DB;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+section {
+    margin: 2em 0;
+    overflow: hidden;
+}
+
+section h2 {
+    font-size: 3em;
+    display: block;
+    padding-bottom: .5em;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: .5em;
+    table-layout: fixed;
+}
+
+td,
+th {
+    padding: .7em;
+    margin: 0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+    background-color: #EEE;
+}
+
+#tabela {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.placar {
+    display: none;
+}
+
+#mensagens-erro {
+    color: red;
+    margin-top: 20px;
+}
+
+.centro {
+    text-align: center;
+}
+
+#divErro {
+    color: red;
+}
+
+.tempo {
+    margin-top: 20px;
+}
+
+.campo-dois {
+    margin: 0;
+    padding-bottom: 1em;
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: .7em;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.grupo-dois {
+    width: 45%;
+    display: inline-block;
+    padding: 10px 0px;
+}
