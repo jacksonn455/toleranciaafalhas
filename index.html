@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="divMain">
                     <label class="tempo">Digite o CEP:</label>
-                    <input id="cep" type="number" class="campo" tabindex="1" />
+                    <input id="cep" type="text" maxlength="9" class="campo" tabindex="1" max="9" />
                     <button id="buscar">Buscar</button>
                 </div>
             </div>
@@ -37,6 +37,7 @@
             <div class="container">
                 <div class="resultado">
                     <h2>Resultado</h2>
+                    <span id="error"></span>
                     <form>
                         <div class="resultadoum">
                             <label for="rua">Rua</label>
@@ -78,6 +79,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="materialize/js/materialize.min.js"></script>
+    <script src="js/fetch.js"></script>
     <script src="js/index.js"></script>
 </body>
 

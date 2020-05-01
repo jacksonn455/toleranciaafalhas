@@ -1,65 +1,54 @@
-$(document).ready(function() {
+const maskCep = cep => cep
+    .replace(/\D/g, '')
+    .replace(/(\d{5})(\d)/, '$1-$2');
 
-    function limpa_formulário_cep() {
-        // Limpa valores do formulário de cep.
-        $("#rua").val("");
-        $("#bairro").val("");
-        $("#cidade").val("");
-        $("#uf").val("");
-        $("#ibge").val("");
+const consult = async cep => {
+    let info = await getViaCep(cep);
+    if (info.error) {
+        info = await getRepublicaVirtual(cep);
     }
-    
-    //Quando o campo cep perde o foco.
-    var buscar = document.querySelector("#buscar");
-    buscar.addEventListener("click", function (event) {
-        event.preventDefault();
+    return info;
+};
 
-        //Nova variável "cep" somente com dígitos.
-        var cep = $('#cep').val().replace(/\D/g, '');
+const clearCep = () => {
+    $("#rua").val("");
+    $("#bairro").val("");
+    $("#cidade").val("");
+    $("#uf").val("");
+    $("#ibge").val("");
+};
 
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
+const loading = () => {
+    $("#rua").val("...");
+    $("#bairro").val("...");
+    $("#cidade").val("...");
+    $("#uf").val("...");
+    $("#ibge").val("...");
+}
 
-            //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
+$('#cep').keyup(e => $('#cep').val(maskCep(e.target.value)));
 
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
-
-                //Preenche os campos com "..." enquanto consulta webservice.
-                $("#rua").val("...");
-                $("#bairro").val("...");
-                $("#cidade").val("...");
-                $("#uf").val("...");
-                $("#ibge").val("...");
-
-                //Consulta o webservice viacep.com.br/
-                $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
-
-                    if (!("erro" in dados)) {
-                        //Atualiza os campos com os valores da consulta.
-                        $("#rua").val(dados.logradouro);
-                        $("#bairro").val(dados.bairro);
-                        $("#cidade").val(dados.localidade);
-                        $("#uf").val(dados.uf);
-                        $("#ibge").val(dados.ibge);
-                    } //end if.
-                    else {
-                        //CEP pesquisado não foi encontrado.
-                        limpa_formulário_cep();
-                        alert("CEP não encontrado.");
-                    }
-                });
-            } //end if.
-            else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
-            }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
+$('#buscar').click( async e => {
+    e.preventDefault();
+    let cep = $('#cep').val().replace(/\D/g, '');
+    if(cep !== '') {
+        $('#error').html('');
+        loading();
+        let dados = await consult(cep);
+        if(!dados.error) {
+            $("#rua").val(dados.resp.logradouro);
+            $("#bairro").val(dados.resp.bairro);
+            $("#cidade").val(dados.resp.localidade ? dados.resp.localidade : dados.resp.cidade);
+            $("#uf").val(dados.resp.uf);
+            $("#ibge").val(dados.resp.ibge);
         }
-    });
+        else{
+            clearCep();
+            $('#error').html('O cep não existe');
+        }
+    } 
+    else {
+        $('#error').html('O cep não pode ser em branco');
+    }
+
 });
