@@ -1,4 +1,4 @@
-Redundancia de software
+Redundância de software
 ===============================================
 
 Desenvolver uma aplicação (em qualquer linguagem), que utilize da técnica de redundância de Software
