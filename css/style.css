@@ -16,8 +16,9 @@ header {
 
 .titulo-nome {
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 200px;
+    margin-left: 100px;
     color: #04B4AE;
 }
 
